@@ -1,6 +1,5 @@
 # Flagicons-vue
-Vue icon flag components based on flag-icons library
-Vue icon components based on the extensive collection of 1000 SVG icons provided by [Flag Icons](https://flagicons.lipis.dev/).
+Vue icon flag components based on flag-icons library [Flag Icons](https://flagicons.lipis.dev/).
 
 Check out the [demo](https://placetopay-org.github.io/flagicons-vue/).
 
