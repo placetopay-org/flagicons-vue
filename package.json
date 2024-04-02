@@ -1,0 +1,59 @@
+{
+  "name": "@placetopay/flagicons-vue",
+  "type": "module",
+  "version": "0.0.1",
+  "description": "Vue icon flag components based on flag-icons library",
+  "main": "dist/flagicons-vue.js",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build && npm run build:types",
+    "build:types": "vue-tsc --declaration --emitDeclarationOnly --outDir dist/types",
+    "build:web": "vite build --mode web",
+    "preview": "vite preview --mode web"
+  },
+  "dependencies": {
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@placetopay/iconsax-vue": "^0.0.7",
+    "@placetopay/spartan-vue": "^2.0.0-beta.71",
+    "@tailwindcss/forms": "^0.5.7",
+    "@types/node": "^20.12.2",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "autoprefixer": "^10.4.19",
+    "postcss": "^8.4.38",
+    "prettier": "3.2.5",
+    "tailwindcss": "^3.4.3",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vite-svg-loader": "^5.1.0",
+    "vue-tsc": "^2.0.6"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/placetopay-org/flagicons-vue.git"
+  },
+  "keywords": [
+    "flags",
+    "icons",
+    "vue",
+    "vue3",
+    "svg"
+  ],
+  "exports": {
+    ".": {
+      "import": "./dist/flagicons-vue.js",
+      "require": "./dist/flagicons-vue.umd.cjs",
+      "types": "./dist/types/index.d.ts"
+    }
+  },
+  "author": "JuanZea",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/placetopay-org/flagicons-vue/issues"
+  },
+  "homepage": "https://github.com/placetopay-org/flagicons-vue#readme"
+}
