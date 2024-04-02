@@ -55,5 +55,8 @@
   "bugs": {
     "url": "https://github.com/placetopay-org/flagicons-vue/issues"
   },
-  "homepage": "https://github.com/placetopay-org/flagicons-vue#readme"
+  "homepage": "https://github.com/placetopay-org/flagicons-vue#readme",
+  "optionalDependencies": {
+    "@rollup/rollup-linux-x64-gnu": "^4.13.2"
+  }
 }

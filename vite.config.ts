@@ -9,6 +9,7 @@ export default defineConfig(({ mode }) => {
 
     if (mode === 'web') {
         return {
+            base: '/flagicons-vue/',
             ...baseConfig,
             build: {
                 outDir: './web/dist',
