@@ -15,6 +15,8 @@ import { FlagIcon } from '@placetopay/flagicons-vue';
 </script>
 
 <template>
-    <FlagIcon flag="co" />
+    <FlagIcon flag="CO" size="S" />
+    <FlagIcon flag="PR" size="M" />
+    <FlagIcon flag="MX" size="L" />
 </template>
 ```
