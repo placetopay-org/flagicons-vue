@@ -1,12 +1,11 @@
 <script setup lang="ts">
 import { CopyrightIcon } from '@placetopay/iconsax-vue/bold';
 import { SCaption, SRadio, SComboboxBlock, SComboboxOption, SBadge } from '@placetopay/spartan-vue';
-import { FlagIcon } from '../lib';
+import { FlagIcon, COUNTRIES } from '../lib';
 import { ref } from 'vue';
-import countries from './countries';
 
-const flag = ref('co');
-const shape = ref('sqr');
+const flag = ref('CO');
+const size = ref('L');
 
 const selectFlag = (code: string) => {
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -38,69 +37,73 @@ const selectFlag = (code: string) => {
         <p class="text-center text-gray-500">A web sandbox for the @placetopay/flagicons-vue package.</p>
         <p class="text-center text-gray-500">Version: 0.0.1</p>
 
-        <section class="flex gap-4 mt-4 justify-center bg-gray-100 w-full p-4 rounded-xl shadow">
-            <FlagIcon
-                :flag="flag"
-                :shape="shape"
-                height="200"
-                class="border-4 border-gray-300 p-2 border-dashed rounded-xl"
-            />
-            <div class="flex flex-col gap-2">
-                <div class="flex gap-4">
-                    <SComboboxBlock
-                        search="auto"
-                        class="w-36"
-                        v-model="flag"
-                        :displayButtonText="(code: string) => code"
-                        helpText="ISO 3166-1-alpha-2 code"
-                    >
-                        <SComboboxOption :value="code" v-for="(data, code) in countries">
-                            {{ code }}
-                        </SComboboxOption>
-                    </SComboboxBlock>
+        <section class="flex gap-4 bg-gray-100 w-fit p-4 rounded shadow mx-auto mt-4">
+            <div class="flex flex-col gap-4 border-2 border-gray-300 border-dashed py-1 px-2 rounded items-center justify-center">
+                <div class="flex flex-col items-center">
+                    <FlagIcon :flag="flag" :size="size" />
+                    <SCaption variant="info">Default</SCaption>
+                </div>
+                <div class="flex flex-col items-center">
+                    <FlagIcon :flag="flag" :size="size" class="rounded-full" />
+                    <SCaption variant="info">Border Radius</SCaption>
+                </div>
+                <div class="flex flex-col items-center">
+                    <FlagIcon :flag="flag" :size="size" class="star" />
+                    <SCaption variant="info">Clip Path</SCaption>
+                </div>
+            </div>
 
-                    <div class="space-y-2">
-                        <SRadio v-model="shape" value="rec">rec (4x3)</SRadio>
-                        <SRadio v-model="shape" value="sqr">sqr (1x1)</SRadio>
+            <div class="flex flex-col gap-4 py-1 px-2">
+                <div class="flex gap-4 *:text-center *:font-semibold">
+                    <div>
+                        <SRadio v-model="size" value="S" />
+                        <span>S</span>
+                    </div>
+                    <div>
+                        <SRadio v-model="size" value="M" />
+                        <span>M</span>
+                    </div>
+                    <div>
+                        <SRadio v-model="size" value="L" />
+                        <span>L</span>
                     </div>
                 </div>
 
-                <div class="flex-1 flex flex-col justify-between items-start">
-                    <p class="text-2xl">
-                        {{ countries[flag].name }}
-                        <span class="text-sm text-gray-500">{{ countries[flag].capital }}</span>
-                    </p>
-                    <p class="text-sm text-gray-600">{{ countries[flag].continent }}</p>
+                <SComboboxBlock
+                    search="auto"
+                    class="w-28"
+                    v-model="flag"
+                    :displayButtonText="(code: string) => code"
+                    helpText="ISO 3166-1 alpha-2"
+                >
+                    <SComboboxOption :value="code" v-for="(data, code) in COUNTRIES">
+                        {{ code }}
+                    </SComboboxOption>
+                </SComboboxBlock>
 
-                    <div class="flex gap-4 mt-2">
-                        <div class="flex flex-col items-center">
-                            <FlagIcon :flag="flag" :shape="shape" height="60" class="rounded-full" />
-                            <SCaption variant="info">class="rounded-full"</SCaption>
-                        </div>
-                        <div class="flex flex-col items-center">
-                            <FlagIcon :flag="flag" :shape="shape" height="60" class="star" />
-                            <SCaption variant="info">clip-path</SCaption>
-                        </div>
-                    </div>
-                </div>
+                <hr/>
+
+                <p class="text-xl">
+                    {{ COUNTRIES[flag].name }}
+                    <span class="text-xs text-gray-500">{{ COUNTRIES[flag].num }}</span>
+                </p>
             </div>
         </section>
 
         <h2 class="font-semibold text-2xl my-4">All Flags</h2>
-        <section class="grid grid-cols-[repeat(auto-fill,minmax(8rem,1fr))] gap-x-6 gap-y-4">
-            <template v-for="(data, code) in countries">
+        <section class="grid grid-cols-[repeat(auto-fill,minmax(5rem,1fr))] gap-x-6 gap-y-4">
+            <template v-for="(data, code) in COUNTRIES">
                 <article tabindex="0" class="group focus-visible:outline-none flex flex-col">
                     <button
                         class="relative bg-gray-100 border shadow-sm rounded-md flex justify-center items-center p-4 cursor-pointer group group-hover:scale-110 group-focus-visible:scale-110 active:scale-100 duration-100 ease-in-out"
                         @click="selectFlag(code)"
                     >
-                        <SBadge color="yellow" pill size="sm" border class="font-semibold absolute -right-4 -top-2">{{
-                            code
-                        }}</SBadge>
+                        <SBadge color="yellow" pill size="sm" border class="font-semibold absolute -right-4 -top-2">
+                            {{ code }}
+                        </SBadge>
                         <FlagIcon
                             :flag="code"
-                            :shape="shape"
-                            height="40"
+                            :size="size"
                             class="group-hover:scale-150 group-focus-visible:scale-150 duration-100 ease-in-out"
                         />
                     </button>
