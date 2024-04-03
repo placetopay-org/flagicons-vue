@@ -11,7 +11,7 @@ npm install @placetopay/flagicons-vue
 ## Usage
 ```html
 <script setup>
-import { FlagIcon } from '@placetopay/iconsax-vue';
+import { FlagIcon } from '@placetopay/flagicons-vue';
 </script>
 
 <template>
