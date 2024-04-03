@@ -30,12 +30,12 @@ const selectFlag = (code: string) => {
             <CopyrightIcon class="absolute w-5 h-5 text-[#42b883] -right-2 -top-2" />
             <p class="text-center">
                 All flags from
-                <a class="text-[#42b883]" target="_blank" href="https://flagicons.lipis.dev/">FlagIcons</a>
+                <a class="text-[#42b883]" target="_blank" href="https://flagpack.xyz/">Flagpack</a>
             </p>
         </div>
 
         <p class="text-center text-gray-500">A web sandbox for the @placetopay/flagicons-vue package.</p>
-        <p class="text-center text-gray-500">Version: 0.0.1</p>
+        <p class="text-center text-gray-500">Version: 0.0.2</p>
 
         <section class="flex gap-4 bg-gray-100 w-fit p-4 rounded shadow mx-auto mt-4">
             <div class="flex flex-col gap-4 border-2 border-gray-300 border-dashed py-1 px-2 rounded items-center justify-center">
