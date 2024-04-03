@@ -2,7 +2,7 @@
   "name": "@placetopay/flagicons-vue",
   "type": "module",
   "version": "0.0.2",
-  "description": "Vue icon flag components based on flag-icons library",
+  "description": "Vue icon flag components based on flagpack icons",
   "main": "dist/flagicons-vue.js",
   "files": [
     "dist"
