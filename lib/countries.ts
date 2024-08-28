@@ -389,6 +389,11 @@ export default {
         "alpha3": "GAB",
         "num": "266"
     },
+    "GB": {
+        "name": "United Kingdom",
+        "alpha3": "GBR",
+        "num": "836"
+    },
     "GB_ENG": {
         "name": "England",
         "alpha3": null,
@@ -398,11 +403,6 @@ export default {
         "name": "Scotland",
         "alpha3": null,
         "num": null
-    },
-    "GB_UKM": {
-        "name": "United Kingdom",
-        "alpha3": "GBR",
-        "num": "836"
     },
     "GB_WLS": {
         "name": "Wales",
